@@ -24,7 +24,7 @@ Resources
 ## SUMMARY
 
 1. How many roles will need to be filled as the "silver tsunami" begins to make an impact?
-##### A great way to answer this question and get a better idea overall of how the "silver tsunami" will wave is to run query by years. For example, retirement eligibility was run based on 1985 - 1988, we could run seperate query to understand how many to expect each year.  Knowing these amounts will give Pewlett-Hackard a better idea for planning rather than having a large number that is being planned to backfill from the beginning.  This will give space for early transitions and refinement of the mentorship program. 
+##### A great way to answer this question and get a better idea overall of how the "silver tsunami" will wave is to run query by years. We could run seperate query to understand how many to expect each year. However, to get the correct numbers, the query needs to be run on birthdate since retirement is determined by age not necessarily hire date. Knowing these amounts will give Pewlett-Hackard a better idea for planning rather than having a large number that is being planned to backfill from the beginning.  This will give space for early transitions and refinement of the mentorship program. 
 
 ![retirement by year](https://github.com/RachelRautenberg/Pewlett_Hackard_Analysis/blob/main/Resources/retirement_by_year.png)
 
