@@ -12,7 +12,7 @@ INTO retirment_titles
 FROM employees as e
 LEFT JOIN titles as ti
 ON e.emp_no = ti.emp_no
-WHERE birth_date >= '1952-01-01' AND birth_date <= '1955-12-31'
+WHERE birth_date (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY emp_no
 
 -- Use Dictinct with Orderby to remove duplicate rows
@@ -30,6 +30,7 @@ SELECT title,
 INTO retiring_titles
 FROM unique_titles
 GROUP BY title
+ORDER BY count
 
 -- Mentorship Eligibility
 SELECT DISTINCT ON (emp_no) e.emp_no,
@@ -48,3 +49,48 @@ ON (e.emp_no = ti.emp_no)
 WHERE (de.to_date = '9999-01-01')
 	 AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY emp_no ASC
+
+
+-- Additional queries
+ELECT ut.emp_no,
+	e.hire_date
+INTO retirement_year1
+FROM unique_titles as ut
+INNER JOIN employees as e
+ON (ut.emp_no = e.emp_no)
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1952-12-31')
+
+SELECT ut.emp_no,
+	e.hire_date
+INTO retirement_year2
+FROM unique_titles as ut
+INNER JOIN employees as e
+ON (ut.emp_no = e.emp_no)
+WHERE (e.birth_date BETWEEN '1953-01-01' AND '1953-12-31')
+
+SELECT ut.emp_no,
+	e.hire_date
+INTO retirement_year3
+FROM unique_titles as ut
+INNER JOIN employees as e
+ON (ut.emp_no = e.emp_no)
+WHERE (e.birth_date BETWEEN '1954-01-01' AND '1954-12-31')
+
+SELECT ut.emp_no,
+	e.hire_date
+INTO retirement_year4
+FROM unique_titles as ut
+INNER JOIN employees as e
+ON (ut.emp_no = e.emp_no)
+WHERE (e.birth_date BETWEEN '1955-01-01' AND '1955-12-31')
+
+SELECT
+	(SELECT COUNT(*)
+	FROM retirement_year1) AS year1,
+	(SELECT COUNT(*)
+	FROM retirement_year2) AS year2,
+	(SELECT COUNT(*)
+	FROM retirement_year3) AS year3,
+	(SELECT COUNT(*)
+	FROM retirement_year4) AS year4
+INTO retirement_distribution
