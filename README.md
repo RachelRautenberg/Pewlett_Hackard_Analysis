@@ -22,6 +22,12 @@ Resources
 ![retiring_titles](https://github.com/RachelRautenberg/Pewlett_Hackard_Analysis/blob/main/Resources/retiring_titles.PNG)
 
 ## SUMMARY
-Provide high-level responses to the following questions, then provide two additional queries or tables that may provide more insight into the upcoming "silver tsunami."
-How many roles will need to be filled as the "silver tsunami" begins to make an impact?
-Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
+
+1. How many roles will need to be filled as the "silver tsunami" begins to make an impact?
+##### A great way to answer this question and get a better idea overall of how the "silver tsunami" will wave is to run query by years. For example, retirement eligibility was run based on 1985 - 1988, we could run seperate query to understand how many to expect each year.  Knowing these amounts will give Pewlett-Hackard a better idea for planning rather than having a large number that is being planned to backfill from the beginning.  This will give space for early transitions and refinement of the mentorship program. 
+
+![retirement by year](https://user-images.githubusercontent.com/96299861/153694704-2cc88fbf-88c5-4693-bbe9-fb886a062ca6.png)
+
+
+2. Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
+##### With the information gathered from the module and challenge queries, it is safe to conclude that there are actually more than enough retirement-ready employees to mentor the next generation.  The fantastic piece of that is that those being mentored can be mentored by many, gleaning from the strengths of the aging team and possible learning a variety of ways to complete the required work.  At this point the concern should be directed toward the lack of mentorship-eligible employees and potential external recruitment to fill positions that could be ready by the end of the retirement wave. A query to address this, could simply be an updated or edited query that was already used, just updating the eligibility requirements. 
